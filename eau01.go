@@ -10,25 +10,15 @@ func contains(arr []string, str string) bool {
 		if i == str {
 			return true
 		}
-		x := fmt.Sprintf("%c%c%c", i[2], i[1], i[0])
-		if x == str {
-			return true
-		}
-		x = fmt.Sprintf("%c%c%c", i[2], i[0], i[1])
-		if x == str {
-			return true
-		}
-		x = fmt.Sprintf("%c%c%c", i[1], i[2], i[0])
-		if x == str {
-			return true
-		}
-		x = fmt.Sprintf("%c%c%c", i[1], i[0], i[2])
-		if x == str {
-			return true
-		}
-		x = fmt.Sprintf("%c%c%c", i[0], i[2], i[1])
-		if x == str {
-			return true
+		for j := 0; j <= 2; j++ {
+			for k := 0; k <= 2; k++ {
+				for l := 0; l <= 2; l++ {
+					x := fmt.Sprintf("%c%c%c", i[j], i[k], i[l])
+					if x == str {
+						return true
+					}
+				}
+			}
 		}
 	}
 	return false
