@@ -7,6 +7,25 @@ import (
 	"unicode"
 )
 
+/*
+Créez un programme qui détermine si une chaîne de caractère se trouve dans une autre.
+
+
+Exemples d’utilisation :
+$> python exo.py bonjour jour
+true
+
+
+$> python exo.py bonjour joure
+false
+
+
+$> python exo.py 42
+error
+
+Afficher error et quitter le programme en cas de problèmes d’arguments.
+*/
+
 func strContains(str string, substr string) bool {
 	if len(str) > 0 && len(substr) > 0 {
 		w := strings.Split(substr, "")
