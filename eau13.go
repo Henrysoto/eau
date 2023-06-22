@@ -27,7 +27,6 @@ error
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 
-
 Wikipedia vous présentera une belle description de cet algorithme de tri.
 */
 
