@@ -8,10 +8,10 @@ import (
 )
 
 /*
-Créez un programme qui trie une liste de nombres. Votre programme devra implémenter l’algorithme du tri à bulle.
+Créez un programme qui trie une liste de nombres. Votre programme devra implémenter l’algorithme du tri par sélection.
 
 Vous utiliserez une fonction de cette forme (selon votre langage) :
-my_bubble_sort(array) {
+my_select_sort(array) {
 	# votre algorithme
 	return (new_array)
 }
@@ -31,18 +31,18 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 Wikipedia vous présentera une belle description de cet algorithme de tri.
 */
 
-func bsort(list []int, n int) {
-	for true {
-		for i := 1; i <= n-1; i++ {
-			if list[i-1] > list[i] {
-				tmp := list[i-1]
-				list[i-1] = list[i]
-				list[i] = tmp
+func selSort(list []int, n int) {
+	for i := 0; i <= n-2; i++ {
+		min := i
+		for j := i + 1; j <= n-1; j++ {
+			if list[j] < list[min] {
+				min = j
 			}
 		}
-		n = n - 1
-		if n == -1 {
-			break
+		if min != i {
+			tmp := list[min]
+			list[min] = list[i]
+			list[i] = tmp
 		}
 	}
 }
@@ -58,7 +58,7 @@ func main() {
 			y, _ := strconv.ParseInt(x, 10, 32)
 			arr = append(arr, int(y))
 		}
-		bsort(arr, len(arr))
+		selSort(arr, len(arr))
 		fmt.Println(arr)
 		return
 	}
